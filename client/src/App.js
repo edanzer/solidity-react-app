@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropertyRegistryContract from "./contracts/PropertyRegistry.json";
 import getWeb3 from "./getWeb3";
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-
 import "./App.css";
 
 const App = () => {
@@ -71,14 +68,24 @@ const App = () => {
 
   return(
     !web3 ? <div>Loading Web3, accounts, and contract...</div> : (
-      <div className="App">
-        <h1>Property Details</h1>
-        <p>Property: {property}</p>
-        <p>Current Owner: {owner}</p>
-        <p>Owner List: {ownerList}</p>
-        <TextField id="new-owner" label="Enter new owner" value={newOwner} onChange={(e) => setNewOwner(e.target.value)} variant="outlined" />
-        <Button variant="contained" size="large" onClick={updateOwner}>Submit Ownership Change</Button>
-        <Button variant="contained" onClick={getPropertyDetails}>Refresh Property Details</Button>
+      <div className="background">
+        <div className="content">
+          <header>
+            <h1>Property Details</h1>
+            <p className="uppercase"><label>Property:</label> {property}</p>
+            <p className="uppercase"><label>Current Owner:</label>  {owner}</p>
+            <button onClick={getPropertyDetails}>Refresh Property Details</button>
+          </header>
+          <section>
+            <p>To update ownership of this property, add new owner's name and submit.</p>
+            <input id="new-owner" value={newOwner} onChange={(e) => setNewOwner(e.target.value)} variant="outlined" />
+            <button onClick={updateOwner}>Submit Ownership Change</button>
+          </section>
+          <footer>
+            <p><label>List of all current and past owners:</label></p>
+            <p>{ownerList}</p>
+          </footer>
+        </div>
       </div>
     )
   ); 

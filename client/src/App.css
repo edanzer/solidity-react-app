@@ -1,22 +1,72 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
+.background {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.content {
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  width: 800px;
+  box-shadow: 0 0 8px 4px rgb(0 0 0 / 10%);
+}
+
+header, 
+section, 
+footer {
+  padding: 2rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1rem;
+  margin: .5rem;
+  font-weight: 300;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, button {
+  box-sizing: border-box;
+  height: 50px;
+  width: 250px;
+  margin: 20px 4px 4px 4px;
+  border-radius: 0;
+  padding: 4px 12px;
+}
+
+input:focus-visible, 
+button:focus-visible {
+  outline: none;
+}
+
+input {
+  border: 1px solid #666;
+  font-size: 1rem;
+}
+
+button {
+  background: #005f73;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  letter-spacing: .5px;
+}
+
+button:hover {
+  background: #01687c;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
